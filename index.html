@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Weather App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="app">
+        <h1>Weather Forecast</h1>
 
-  <h1>Weather App</h1>
+        <form id="searchForm">
+            <input id="locationInput" type="text" placeholder="Enter a location">
+            <button type="submit">Search</button>
+        </form>
 
-  <form id="search-form">
-    <input id="location-input" type="text" placeholder="Enter a city..." required>
-    <button type="submit">Search</button>
-  </form>
+        <div id="loading" class="hidden">Loading...</div>
 
-  <div id="loading" style="display:none;">Loading...</div>
+        <div id="weatherOutput" class="hidden">
+            <h2 id="cityName"></h2>
+            <p id="conditions"></p>
+            <p>
+                Temperature:
+                <span id="tempValue"></span>°
+                <span id="tempUnit">C</span>
+            </p>
+            <button id="toggleBtn">Toggle °C / °F</button>
+        </div>
+    </div>
 
-  <div id="weather-display"></div>
-
+    <script src="script.js" defer></script>
 </body>
 </html>
 
